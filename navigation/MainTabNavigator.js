@@ -7,6 +7,7 @@ import HomeScreen from '../screens/HomeScreen';
 import ListsScreen from '../screens/ListsScreen';
 import SettingsScreen from '../screens/SettingsScreen';
 import Colors from '../constants/Colors';
+import NameList from '../screens/NameList';
 
 // static navigationOptions = {
 //   title: 'Home',
@@ -49,7 +50,12 @@ HomeStack.navigationOptions = {
 };
 
 const ListsStack = createStackNavigator({
-  Lists: ListsScreen,
+  List: {
+    screen: ListsScreen,
+  },
+  NameList: {
+    screen: NameList,
+  },
 });
 
 ListsStack.navigationOptions = {
@@ -63,7 +69,7 @@ ListsStack.navigationOptions = {
 };
 
 const SettingsStack = createStackNavigator({
-  Settings: SettingsScreen,
+  Settings: SettingsScreen, 
 });
 
 SettingsStack.navigationOptions = {
