@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import BarsTabBar3Items2 from "../symbols/BarsTabBar3Items2";
+// import BarsTabBar3Items2 from "../symbols/BarsTabBar3Items2";
 import { Svg, Path } from "react-native-svg";
 import { View, Text, StyleSheet } from "react-native";
 
@@ -7,7 +7,7 @@ export default class IPhone820 extends Component {
   render() {
     return (
       <View style={styles.root}>
-        <BarsTabBar3Items2 style={styles.barsTabBar3Items} />
+        {/* <BarsTabBar3Items2 style={styles.barsTabBar3Items} /> */}
         <Svg
           viewBox="0 0 423.00 4.00"
           preserveAspectRatio="none"

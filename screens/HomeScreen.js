@@ -32,11 +32,11 @@ export default class IPhone818 extends Component {
               d="M159.50 319.00 C247.58 319.00 319.00 247.58 319.00 159.50 C319.00 71.42 247.58 0.00 159.50 0.00 C71.42 0.00 0.00 71.42 0.00 159.50 C0.00 247.58 71.42 319.00 159.50 319.00 Z"
             />
           </Svg>
-          {/* <Center horizontal>
+          {/* <Center horizontal> */}
             <Text style={styles.text}>Start Shopping!</Text>
-          </Center> */}
+          {/* </Center> */}
         </View>
-        <BarsTabBar3Items2 style={styles.barsTabBar3Items} />
+        {/* <BarsTabBar3Items2 style={styles.barsTabBar3Items} /> */}
       </View>
     );
   }
@@ -80,15 +80,10 @@ const styles = StyleSheet.create({
     color: "rgba(250,240,202,1)",
     fontSize: 55,
     fontFamily: "Futura-Medium",
-    top: "27.21%"
-  },
-  barsTabBar3Items: {
-    position: "absolute",
-    top: "92.26%",
-    left: "0.00%",
-    height: "7.74%",
-    width: "100.00%",
-    backgroundColor: "transparent"
+    // top: "27.21%",
+    display: "flex",
+    left: 20,
+    top: 50
   }
 });
 
