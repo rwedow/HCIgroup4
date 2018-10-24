@@ -16,6 +16,6 @@ export default {
   warningBackground: '#EAEB5E',
   warningText: '#666804',
   noticeBackground: ourYellow,
-  noticeText: '#fff',
+  noticeText: '#fffff',
   tabBackground: ourBlue
 };
