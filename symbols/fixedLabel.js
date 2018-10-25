@@ -33,7 +33,7 @@ const styles = StyleSheet.create({
     paddingTop: 16,
     paddingBottom: 8,
     fontSize: 16,
-    fontFamily: "Roboto",
+    fontFamily: "Futura",
     lineHeight: 16,
     color: "#000"
   },
@@ -45,7 +45,7 @@ const styles = StyleSheet.create({
     paddingBottom: 8,
     paddingLeft: 30,
     fontSize: 16,
-    fontFamily: "Roboto",
+    fontFamily: "Futura",
     lineHeight: 16,
     color: "#000"
   }

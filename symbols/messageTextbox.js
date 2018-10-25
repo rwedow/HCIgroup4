@@ -70,7 +70,7 @@ const styles = StyleSheet.create({
   label: {
     paddingTop: 16,
     fontSize: 12,
-    fontFamily: "Roboto",
+    fontFamily: "Futura",
     textAlign: "left"
   },
   inputStyle: {
@@ -81,20 +81,20 @@ const styles = StyleSheet.create({
     borderColor: "#D9D5DC",
     borderBottomWidth: 1,
     fontSize: 16,
-    fontFamily: "Roboto",
+    fontFamily: "Futura",
     lineHeight: 16,
     color: "#000"
   },
   helper1: {
     paddingTop: 8,
     fontSize: 12,
-    fontFamily: "Roboto",
+    fontFamily: "Futura",
     textAlign: "left"
   },
   helper2: {
     paddingTop: 8,
     fontSize: 12,
-    fontFamily: "Roboto",
+    fontFamily: "Futura",
     textAlign: "left"
   }
 });

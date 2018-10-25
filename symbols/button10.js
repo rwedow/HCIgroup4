@@ -10,10 +10,11 @@ export default class button10 extends Component {
     defaultWidth: "auto"
   };
   render() {
+    const { onPress} = this.props;
     return (
       <TouchableOpacity
         style={[styles.root, this.props.style]}
-        onPress={this.props.root ? this.props.root : null}
+        onPress={() => onPress()}
       >
         <Text style={styles.buttonContent}>Add List</Text>
       </TouchableOpacity>

@@ -42,7 +42,7 @@ const styles = StyleSheet.create({
     paddingRight: 5,
     paddingBottom: 8,
     fontSize: 16,
-    fontFamily: "Roboto",
+    fontFamily: "Futura",
     lineHeight: 16,
     color: "#000"
   },

@@ -28,7 +28,7 @@ const styles = StyleSheet.create({
   buttonContent: {
     fontSize: 17,
     fontWeight: "500",
-    fontFamily: "Roboto",
+    fontFamily: "Futura",
     color: "#000"
   }
 });

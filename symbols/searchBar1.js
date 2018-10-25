@@ -78,7 +78,7 @@ const styles = StyleSheet.create({
     flex: 1,
     alignSelf: "flex-start",
     fontSize: 15,
-    fontFamily: "Roboto",
+    fontFamily: "Futura",
     lineHeight: 15,
     color: "#000"
   },

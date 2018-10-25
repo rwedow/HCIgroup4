@@ -10,10 +10,11 @@ export default class button121 extends Component {
     defaultWidth: "auto"
   };
   render() {
+    const { onPress} = this.props;
     return (
       <TouchableOpacity
         style={[styles.root, this.props.style]}
-        onPress={this.props.root ? this.props.root : null}
+        onPress={() => onPress()}
       >
         <Text style={styles.buttonContent}>NEXT</Text>
       </TouchableOpacity>
@@ -40,9 +41,9 @@ const styles = StyleSheet.create({
     shadowRadius: 5
   },
   buttonContent: {
-    fontSize: 20,
+    fontSize: 25,
     fontWeight: "200",
-    fontFamily: "Futura-Medium",
-    color: "#fff"
+    color: "#fff",
+    fontFamily: "Futura-Medium"
   }
 });

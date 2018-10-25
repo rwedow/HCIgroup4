@@ -49,7 +49,7 @@ const styles = StyleSheet.create({
   },
   titleLeft: {
     fontSize: 13,
-    fontFamily: "Roboto",
+    fontFamily: "Futura",
     color: "#FFFFFF"
   },
   segmentTextWrapperRight: {
@@ -64,7 +64,7 @@ const styles = StyleSheet.create({
   },
   titleRight: {
     fontSize: 13,
-    fontFamily: "Roboto",
+    fontFamily: "Futura",
     color: "#007AFF"
   }
 });

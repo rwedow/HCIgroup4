@@ -27,7 +27,7 @@ const styles = StyleSheet.create({
     opacity: 0.6,
     paddingTop: 16,
     fontSize: 12,
-    fontFamily: "Roboto",
+    fontFamily: "Futura",
     textAlign: "left",
     color: "#000"
   },
@@ -39,7 +39,7 @@ const styles = StyleSheet.create({
     borderColor: "#D9D5DC",
     borderBottomWidth: 1,
     fontSize: 16,
-    fontFamily: "Roboto",
+    fontFamily: "Futura",
     lineHeight: 16,
     color: "#000"
   },
@@ -47,7 +47,7 @@ const styles = StyleSheet.create({
     opacity: 0.6,
     paddingTop: 8,
     fontSize: 12,
-    fontFamily: "Roboto",
+    fontFamily: "Futura",
     textAlign: "left",
     color: "#000"
   }

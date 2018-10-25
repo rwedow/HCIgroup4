@@ -39,7 +39,7 @@ const styles = StyleSheet.create({
   buttonContent: {
     fontSize: 14,
     fontWeight: "200",
-    fontFamily: "Roboto",
+    fontFamily: "Futura",
     color: "#fff"
   }
 });
