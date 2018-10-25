@@ -1,33 +1,46 @@
 import React, { Component } from "react";
 import { TabView, TabContent } from "@builderx/tab-view";
+import SearchBar from 'react-native-searchbar';
 import { Svg, Path } from "react-native-svg";
-import { View, StyleSheet, Text } from "react-native";
+import { View, Text, StyleSheet, TextInput } from "react-native";
 
 export default class BrowseScreen extends Component {
   render() {
 
-    var groceryLists = ['Baking List', 'Grill List'];
-    var listsArr = groceryLists.map(function(list, index){
-      return <View style={styles.singleList} key={index}>
-        <Svg
-          style={styles.svg}
-          viewBox="0 0 423.00 4.00"
-          preserveAspectRatio="none"
-        >
-          <Path
-            strokeWidth={1}
-            fill="rgba(0,0,0,1)"
-            stroke="rgba(255,255,255,1)"
-            isClosed={false}
-            d="M1.01 1.50 L420.99 1.50 "
-          />
-        </Svg>
-        <Text style={styles.text}>{list}</Text>
-      </View>;
+    const searchEntry = [''];
+
+    var searchResults = ['Tomato Soup', 'Tomato Salsa'];
+    var resultsArr = searchResults.map(function(item, index){
+      return <View style={styles.resultItem} key={index}>
+      <Svg
+        viewBox="0 0 423.00 4.00"
+        preserveAspectRatio="none"
+        style={styles.line}
+      >
+        <Path
+          strokeWidth={1}
+          fill="rgba(0,0,0,1)"
+          stroke="rgba(255,255,255,1)"
+          isClosed={false}
+          d="M1.01 1.50 L420.99 1.50 "
+        />
+      </Svg>
+      <Text style={styles.resultText}>{ item }</Text>
+    </View>;
     })
 
     return (
       <View style={styles.root}>
+
+        <TextInput
+          style={styles.searchBar}
+          ref={(ref) => this.searchBar = ref}
+          data={searchEntry}
+          placeholder={"Search"}
+          handleResults={this._handleResults}
+          showOnLoad
+        />
+
         <TabView
           style={styles.tab}
           tabStyle={styles.tab_tabStyle}
@@ -36,27 +49,36 @@ export default class BrowseScreen extends Component {
           tabBarStyle={styles.tab_tabBarStyle}
           activeTabIndex={0}
         >
-          <TabContent title="Lists">
-            <View style={styles.navItem} />
-          </TabContent>
           <TabContent title="Recipes">
             <View style={styles.navItem} />
           </TabContent>
+          <TabContent title="Coupons">
+            <View style={styles.navItem} />
+          </TabContent>
         </TabView>
-        
-        {/* iterate through these */}
-        { listsArr }
+
+        { resultsArr }
       </View>
     );
   }
 }
+
 const styles = StyleSheet.create({
   root: {
     backgroundColor: "rgba(250,240,202,1)",
     flex: 1
   },
+  searchBar: {
+    paddingLeft: 30,
+    margin: 5,
+    fontSize: 22,
+    height: 5,
+    flex: .1,
+    backgroundColor: "#fff",
+    borderRadius: 100
+  },
   tab: {
-    top: 0,
+    top: 65,
     left: 0,
     width: 375,
     height: 54,
@@ -89,34 +111,171 @@ const styles = StyleSheet.create({
     flex: 1,
     backgroundColor: "#eeeeee"
   },
-  singleList: {
-    top: "9.55%",
-    left: "0%",
-    width: "101.6%",
-    height: "8.4%"
+  resultItem: {
+    top: "12.52%",
+    left: "0.00%",
+    height: "8.93%",
+    width: "101.69%"
   },
-  svg: {
+  line: {
+    position: "absolute",
+    height: "5.88%",
+    width: "100.24%",
     top: "95.10%",
     left: "-0.12%",
-    width: "100.24%",
-    height: "5.88%",
-    position: "absolute",
     backgroundColor: "transparent",
     borderColor: "transparent"
   },
-  text: {
+  resultText: {
+    position: "absolute",
     top: "0.00%",
     left: "4.28%",
-    width: "90.26%",
     height: "78.43%",
-    position: "absolute",
+    width: "90.26%",
     backgroundColor: "transparent",
+    color: "rgba(106,106,106,1)",
     fontSize: 28,
     fontFamily: "Futura-Medium",
-    letterSpacing: 1.42,
-    color: "rgba(106,106,106,1)"
+    letterSpacing: 1.42
+  },
+  group3: {
+    position: "absolute",
+    top: "28.53%",
+    left: "0.00%",
+    height: "15.08%",
+    width: "101.69%"
+  },
+  line4: {
+    position: "absolute",
+    height: "2.70%",
+    width: "100.24%",
+    top: "43.69%",
+    left: "-0.12%",
+    backgroundColor: "transparent",
+    borderColor: "transparent"
   }
 });
+
+
+// import React, { Component } from "react";
+// import { TabView, TabContent } from "@builderx/tab-view";
+// import { Svg, Path } from "react-native-svg";
+// import { View, StyleSheet, Text } from "react-native";
+
+// export default class BrowseScreen extends Component {
+//   render() {
+
+//     var groceryLists = ['Baking List', 'Grill List'];
+//     var listsArr = groceryLists.map(function(list, index){
+//       return <View style={styles.singleList} key={index}>
+//         <Svg
+//           style={styles.svg}
+//           viewBox="0 0 423.00 4.00"
+//           preserveAspectRatio="none"
+//         >
+//           <Path
+//             strokeWidth={1}
+//             fill="rgba(0,0,0,1)"
+//             stroke="rgba(255,255,255,1)"
+//             isClosed={false}
+//             d="M1.01 1.50 L420.99 1.50 "
+//           />
+//         </Svg>
+//         <Text style={styles.text}>{list}</Text>
+//       </View>;
+//     })
+
+//     return (
+//       <View style={styles.root}>
+//         <TabView
+//           style={styles.tab}
+//           tabStyle={styles.tab_tabStyle}
+//           tabIndicatorStyle={styles.tab_tabIndicatorStyle}
+//           tabLabelStyle={styles.tab_tabLabelStyle}
+//           tabBarStyle={styles.tab_tabBarStyle}
+//           activeTabIndex={0}
+//         >
+//           <TabContent title="Lists">
+//             <View style={styles.navItem} />
+//           </TabContent>
+//           <TabContent title="Recipes">
+//             <View style={styles.navItem} />
+//           </TabContent>
+//         </TabView>
+        
+//         {/* iterate through these */}
+//         { listsArr }
+//       </View>
+//     );
+//   }
+// }
+// const styles = StyleSheet.create({
+//   root: {
+//     backgroundColor: "rgba(250,240,202,1)",
+//     flex: 1
+//   },
+//   tab: {
+//     top: 0,
+//     left: 0,
+//     width: 375,
+//     height: 54,
+//     position: "absolute",
+//     backgroundColor: "rgba(250,240,202,1)",
+//     opacity: 1
+//   },
+//   tab_tabStyle: {},
+//   tab_tabIndicatorStyle: {
+//     elevation: 3,
+//     backgroundColor: "rgba(250,240,202,1)",
+//     opacity: 1,
+//     shadowColor: "#000",
+//     shadowOffset: {
+//       width: 0,
+//       height: 2
+//     },
+//     shadowOpacity: 0.2,
+//     shadowRadius: 1.2
+//   },
+//   tab_tabLabelStyle: {
+//     fontSize: 20,
+//     fontFamily: "Futura-Medium"
+//   },
+//   tab_tabBarStyle: {
+//     backgroundColor: "rgba(238,150,75,1)",
+//     opacity: 1
+//   },
+//   navItem: {
+//     flex: 1,
+//     backgroundColor: "#eeeeee"
+//   },
+//   singleList: {
+//     top: "9.55%",
+//     left: "0%",
+//     width: "101.6%",
+//     height: "8.4%"
+//   },
+//   svg: {
+//     top: "95.10%",
+//     left: "-0.12%",
+//     width: "100.24%",
+//     height: "5.88%",
+//     position: "absolute",
+//     backgroundColor: "transparent",
+//     borderColor: "transparent"
+//   },
+//   text: {
+//     top: "0.00%",
+//     left: "4.28%",
+//     width: "90.26%",
+//     height: "78.43%",
+//     position: "absolute",
+//     backgroundColor: "transparent",
+//     fontSize: 28,
+//     fontFamily: "Futura-Medium",
+//     letterSpacing: 1.42,
+//     color: "rgba(106,106,106,1)"
+//   }
+// });
 
 // import React, { Component } from "react";
 // import { Svg, Path } from "react-native-svg";
