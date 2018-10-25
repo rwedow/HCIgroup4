@@ -49,9 +49,9 @@ const styles = StyleSheet.create({
   startButton: {
     position: "absolute",
     top: "26.63%",
-    left: "8.45%",
-    height: "46.88%",
-    width: "83.33%"
+    left: "11.45%",
+    height: "50.88%",
+    width: "78.33%"
   },
   oval: {
     position: "absolute",
@@ -82,8 +82,8 @@ const styles = StyleSheet.create({
     fontFamily: "Futura-Medium",
     // top: "27.21%",
     display: "flex",
-    left: 20,
-    top: 50
+    left: 15,
+    top: 45
   }
 });
 

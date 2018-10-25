@@ -7,7 +7,6 @@ export default class IPhone820 extends Component {
   render() {
     return (
       <View style={styles.root}>
-        {/* <BarsTabBar3Items2 style={styles.barsTabBar3Items} /> */}
         <Svg
           viewBox="0 0 423.00 4.00"
           preserveAspectRatio="none"
@@ -29,7 +28,7 @@ export default class IPhone820 extends Component {
           <View style={styles.rectangle1} />
           <Text style={styles.coupons}>Coupons</Text>
         </View>
-        <View style={styles.group2}>
+        <View style={styles.resultsGroup}>
           <Svg
             viewBox="0 0 423.00 4.00"
             preserveAspectRatio="none"
@@ -127,7 +126,19 @@ const styles = StyleSheet.create({
     width: "79.86%",
     color: "rgba(255,255,255,1)",
     textAlign: "center",
-    fontSize: 28,
+    fontSize: 22,
+    fontFamily: "Futura-Medium",
+    letterSpacing: 1.42
+  },
+  coupons: {
+    position: "absolute",
+    top: "0.00%",
+    left: "10.24%",
+    height: "87.80%",
+    width: "80.12%",
+    color: "rgba(167,167,167,1)",
+    textAlign: "center",
+    fontSize: 22,
     fontFamily: "Futura-Medium",
     letterSpacing: 1.42
   },
@@ -148,19 +159,7 @@ const styles = StyleSheet.create({
     borderRadius: 20.5,
     backgroundColor: "rgba(204,204,204,1)"
   },
-  coupons: {
-    position: "absolute",
-    top: "0.00%",
-    left: "10.24%",
-    height: "87.80%",
-    width: "80.12%",
-    color: "rgba(167,167,167,1)",
-    textAlign: "center",
-    fontSize: 28,
-    fontFamily: "Futura-Medium",
-    letterSpacing: 1.42
-  },
-  group2: {
+  resultsGroup: {
     position: "absolute",
     top: "20.52%",
     left: "0.00%",
