@@ -13,7 +13,9 @@
     "preset": "jest-expo"
   },
   "dependencies": {
+    "@builderx/icons": "^0.1.6",
     "@builderx/tab-view": "^0.1.6",
+    "@builderx/utils": "^0.1.6",
     "@expo/samples": "2.1.1",
     "@fortawesome/fontawesome-svg-core": "^1.2.6",
     "@fortawesome/free-solid-svg-icons": "^5.4.1",

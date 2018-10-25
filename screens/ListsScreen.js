@@ -38,58 +38,20 @@ export default class ListsScreen extends React.Component {
           activeTabIndex={0}
         >
           <TabContent title="Lists">
-//             <View style={styles.rect} />
-//           </TabContent>
-//           <TabContent title="Recipes">
-//             <View style={styles.rect2} />
-//           </TabContent>
-//         </TabView>
-//         <View style={styles.rect3}>
-//           <Svg
-//             style={styles.svg}
-//             viewBox="0 0 423.00 4.00"
-//             preserveAspectRatio="none"
-//           >
-//             <Path
-//               strokeWidth={1}
-//               fill="rgba(0,0,0,1)"
-//               stroke="rgba(255,255,255,1)"
-//               isClosed={false}
-//               d="M1.01 1.50 L420.99 1.50 "
-//             />
-//           </Svg>
-//           <Text style={styles.text}>First Grocery List</Text>
-//         </View>
-//         <View style={styles.rect4}>
-//           <Svg
-//             style={styles.svg2}
-//             viewBox="0 0 423.00 4.00"
-//             preserveAspectRatio="none"
-//           >
-//             <Path
-//               strokeWidth={1}
-//               fill="rgba(0,0,0,1)"
-//               stroke="rgba(255,255,255,1)"
-//               isClosed={false}
-//               d="M1.01 1.50 L420.99 1.50 "
-//             />
-//           </Svg>
-//           <Text style={styles.text2}>Second Grocery List</Text>
-//         </View>
-//         <Button10
-//           style={styles.button10}
-//           onPress={() => {
-//             this.props.navigation.push("NameList");
-//           }}
-//         />
             <View style={styles.navItem} />
           </TabContent>
           <TabContent title="Recipes">
             <View style={styles.navItem} />
           </TabContent>
         </TabView>
+
+        <Button10
+          style={styles.button10}
+          onPress={() => {
+          this.props.navigation.push("NameList");
+          }}
+        />
         
-        {/* iterate through these */}
         { listsArr }
       </View>
     );

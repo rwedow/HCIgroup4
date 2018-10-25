@@ -33,7 +33,7 @@ export default class BrowseScreen extends Component {
       <View style={styles.root}>
 
         <TextInput
-          style={styles.searchBar}
+          style={styles.textInput}
           ref={(ref) => this.searchBar = ref}
           data={searchEntry}
           placeholder={"Search"}
@@ -68,14 +68,18 @@ const styles = StyleSheet.create({
     backgroundColor: "rgba(250,240,202,1)",
     flex: 1
   },
-  searchBar: {
-    paddingLeft: 30,
-    margin: 5,
+  textInput: {
     fontSize: 22,
-    height: 5,
     flex: .1,
     backgroundColor: "#fff",
-    borderRadius: 100
+    height: 50,
+    width: 355,
+    margin: 5,
+    marginLeft: 10,
+    position: "absolute",
+    borderRadius: 40,
+    fontSize: 22,
+    textAlign: "center"
   },
   tab: {
     top: 65,
@@ -112,7 +116,7 @@ const styles = StyleSheet.create({
     backgroundColor: "#eeeeee"
   },
   resultItem: {
-    top: "12.52%",
+    top: "21.52%",
     left: "0.00%",
     height: "8.93%",
     width: "101.69%"
@@ -123,7 +127,7 @@ const styles = StyleSheet.create({
     width: "100.24%",
     top: "95.10%",
     left: "-0.12%",
-    backgroundColor: "transparent",
+    backgroundColor: "transparent", 
     borderColor: "transparent"
   },
   resultText: {

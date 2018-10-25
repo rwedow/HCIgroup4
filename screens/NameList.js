@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-
 import { Center } from "@builderx/utils";
 import Button121 from "../symbols/button121";
 import { View, Text, StyleSheet, TextInput } from "react-native";
@@ -29,7 +28,6 @@ const styles = StyleSheet.create({
     backgroundColor: "rgba(250,240,202,1)",
     flex: 1
   },
-
   nameYourList: {
     position: "absolute",
     top: "2.5%",
