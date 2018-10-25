@@ -7,6 +7,8 @@ import HomeScreen from '../screens/HomeScreen';
 import ListsScreen from '../screens/ListsScreen';
 import BrowseScreen from '../screens/BrowseScreen';
 import Colors from '../constants/Colors';
+import NameList from '../screens/NameList';
+import AddItems from '../screens/AddItems';
 
 // static navigationOptions = {
 //   title: 'Home',
@@ -49,7 +51,15 @@ HomeStack.navigationOptions = {
 };
 
 const ListsStack = createStackNavigator({
-  Lists: ListsScreen,
+  List: {
+    screen: ListsScreen,
+  },
+  NameList: {
+    screen: NameList,
+  },
+  AddItems: {
+    screen: AddItems,
+  },
 });
 
 ListsStack.navigationOptions = {
