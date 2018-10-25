@@ -6,7 +6,9 @@ import TabBarIcon from '../components/TabBarIcon';
 import HomeScreen from '../screens/HomeScreen';
 import ListsScreen from '../screens/ListsScreen';
 import SettingsScreen from '../screens/SettingsScreen';
-import Colors from '../constants/Colors';
+import StartShoppingScreen from '../screens/StartShoppingScreen';
+import PreferencesForm from '../screens/PreferencesForm';
+
 
 // static navigationOptions = {
 //   title: 'Home',
@@ -23,7 +25,7 @@ import Colors from '../constants/Colors';
 
 export const HomeStack = createStackNavigator({
   Home: {
-    screen: HomeScreen,
+    screen: StartShoppingScreen,
       navigationOptions: {
         headerBackTitleStyle: '#000',
         title: "Home",
@@ -31,7 +33,10 @@ export const HomeStack = createStackNavigator({
           backgroundColor: '#ff0000'
         }
       },
-    }
+    },
+    PreferencesForm: {
+      screen: PreferencesForm,
+    },
 });
 
 HomeStack.navigationOptions = {
