@@ -5,7 +5,7 @@ import { createStackNavigator, createBottomTabNavigator } from 'react-navigation
 import TabBarIcon from '../components/TabBarIcon';
 import HomeScreen from '../screens/HomeScreen';
 import ListsScreen from '../screens/ListsScreen';
-import SettingsScreen from '../screens/SettingsScreen';
+import BrowseScreen from '../screens/BrowseScreen';
 import Colors from '../constants/Colors';
 
 // static navigationOptions = {
@@ -62,12 +62,12 @@ ListsStack.navigationOptions = {
   ),
 };
 
-const SettingsStack = createStackNavigator({
-  Settings: SettingsScreen,
+const BrowseStack = createStackNavigator({
+  Browse: BrowseScreen,
 });
 
-SettingsStack.navigationOptions = {
-  tabBarLabel: 'Settings',
+BrowseStack.navigationOptions = {
+  tabBarLabel: 'Browse',
   tabBarIcon: ({ focused }) => (
     <TabBarIcon
       focused={focused}
@@ -79,5 +79,5 @@ SettingsStack.navigationOptions = {
 export default createBottomTabNavigator ({
   HomeStack,
   ListsStack,
-  SettingsStack
+  BrowseStack
 });

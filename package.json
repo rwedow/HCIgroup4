@@ -13,6 +13,7 @@
     "preset": "jest-expo"
   },
   "dependencies": {
+    "@builderx/tab-view": "^0.1.6",
     "@expo/samples": "2.1.1",
     "@fortawesome/fontawesome-svg-core": "^1.2.6",
     "@fortawesome/free-solid-svg-icons": "^5.4.1",
@@ -20,6 +21,7 @@
     "expo": "^30.0.1",
     "react": "16.3.1",
     "react-native": "https://github.com/expo/react-native/archive/sdk-30.0.0.tar.gz",
+    "react-native-searchbar": "^1.15.0",
     "react-navigation": "^2.16.0"
   },
   "devDependencies": {
