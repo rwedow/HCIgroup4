@@ -33,7 +33,7 @@ export default class PreferencesForm extends Component {
         <Text style={styles.text5}>mi</Text>
         <Button121
           style={styles.button121}
-          root={() => {
+          onPress={() =>{
             this.props.navigation.push("AddItems");
           }}
         />
