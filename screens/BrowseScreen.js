@@ -1,11 +1,23 @@
-import React, { Component } from "react";
+import { Component } from "react";
+import React from 'react-native';
+const {
+  TouchableOpacity
+  } = React;
 import { Svg, Path } from "react-native-svg";
 import { View, Text, StyleSheet, TextInput, FlatList } from "react-native";
 
-export default class IPhone814 extends Component {
+export default class BrowseScreen extends Component {
+// const BrowseScreen = React.createClass({
   render() {
     return (
       <View style={styles.root}>
+        <TouchableOpacity onPress={this.onSearch} activeOpacity={0.9}>
+          <View style={styles.searchButton}>
+            <Text style={styles.searchButtonText}>
+              Search
+            </Text>
+          </View>
+        </TouchableOpacity>
         <Svg
           viewBox="0 0 423.00 4.00"
           preserveAspectRatio="none"
@@ -86,6 +98,7 @@ export default class IPhone814 extends Component {
     );
   }
 }
+
 const styles = StyleSheet.create({
   root: {
     backgroundColor: "rgba(250,240,202,1)",
@@ -248,6 +261,15 @@ const styles = StyleSheet.create({
     backgroundColor: "#999999",
     left: 15,
     height: 2
+  },
+  searchButton: {
+    padding: 14,
+    backgroundColor: "#fff",
+  },
+  searchButtonText: {
+    fontSize: 16,
+    color: 'white',
+    textAlign: 'center'
   }
 });
 
