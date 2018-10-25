@@ -8,6 +8,7 @@ import ListsScreen from '../screens/ListsScreen';
 import SettingsScreen from '../screens/SettingsScreen';
 import Colors from '../constants/Colors';
 import NameList from '../screens/NameList';
+import AddItems from '../screens/AddItems';
 
 // static navigationOptions = {
 //   title: 'Home',
@@ -55,6 +56,9 @@ const ListsStack = createStackNavigator({
   },
   NameList: {
     screen: NameList,
+  },
+  AddItems: {
+    screen: AddItems,
   },
 });
 

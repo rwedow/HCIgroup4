@@ -3,16 +3,19 @@ import { View, TouchableOpacity, Text, StyleSheet } from "react-native";
 
 export default class button10 extends Component {
   // Only for displaying symbol in BuilderX.
-  /*static containerStyle = {
+  static containerStyle = {
     height: 44,
     width: 100,
     defaultHeight: "fixed",
     defaultWidth: "auto"
-  };*/
+  };
   render() {
-    const { text, onPress} = this.props;
+    const { onPress} = this.props;
     return (
-      <TouchableOpacity style={[styles.root, this.props.style]} onPress={() => onPress()}>
+      <TouchableOpacity
+        style={[styles.root, this.props.style]}
+        onPress={() => onPress()}
+      >
         <Text style={styles.buttonContent}>Add List</Text>
       </TouchableOpacity>
     );

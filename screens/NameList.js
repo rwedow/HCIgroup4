@@ -1,10 +1,10 @@
 import React, { Component } from "react";
+
 import { Center } from "@builderx/utils";
-import Button12 from "../symbols/button12";
-import { createStackNavigator } from 'react-navigation';
+import Button121 from "../symbols/button121";
 import { View, Text, StyleSheet, TextInput } from "react-native";
 
-export default class NameList extends React.Component {
+export default class NameList extends Component {
   render() {
     return (
       <View style={styles.root}>
@@ -14,7 +14,12 @@ export default class NameList extends React.Component {
         <Center horizontal>
           <TextInput placeholder="List Name" style={styles.textInput} />
         </Center>
-        <Button12 style={styles.button12} />
+        <Button121
+          style={styles.button121}
+          onPress={() => {
+            this.props.navigation.push("AddItems");
+          }}
+        />
       </View>
     );
   }
@@ -50,10 +55,10 @@ const styles = StyleSheet.create({
     fontSize: 20,
     textAlign: "center"
   },
-  button12: {
-    top: 543.89,
-    left: 14,
-    position: "absolute",
-    height: 36
+  button121: {
+    top: 588.63,
+    left: 255.5,
+    height: 36,
+    position: "absolute"
   }
 });

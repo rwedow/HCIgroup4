@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import { View, TouchableOpacity, Text, StyleSheet } from "react-native";
 
-export default class button13 extends Component {
+export default class button121 extends Component {
   // Only for displaying symbol in BuilderX.
   static containerStyle = {
     height: 36,
@@ -10,9 +10,13 @@ export default class button13 extends Component {
     defaultWidth: "auto"
   };
   render() {
+    const { onPress} = this.props;
     return (
-      <TouchableOpacity style={[styles.root, this.props.style]}>
-        <Text style={styles.buttonContent}>BUTTON</Text>
+      <TouchableOpacity
+        style={[styles.root, this.props.style]}
+        onPress={() => onPress()}
+      >
+        <Text style={styles.buttonContent}>NEXT</Text>
       </TouchableOpacity>
     );
   }
@@ -23,7 +27,7 @@ const styles = StyleSheet.create({
     flexDirection: "row",
     alignItems: "center",
     justifyContent: "center",
-    backgroundColor: "#212121",
+    backgroundColor: "#F44336",
     paddingRight: 16,
     paddingLeft: 16,
     minWidth: 88,
@@ -37,9 +41,9 @@ const styles = StyleSheet.create({
     shadowRadius: 5
   },
   buttonContent: {
-    fontSize: 14,
+    fontSize: 25,
     fontWeight: "200",
-    fontFamily: "Futura",
-    color: "#fff"
+    color: "#fff",
+    fontFamily: "Futura-Medium"
   }
 });
