@@ -34,7 +34,7 @@ export default class PreferencesForm extends Component {
         <Button121
           style={styles.button121}
           onPress={() =>{
-            this.props.navigation.push("AddItems");
+            this.props.navigation.push("AddItemsShopping");
           }}
         />
         <Text style={styles.text6}>Allow substitutions</Text>
