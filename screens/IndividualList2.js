@@ -1,14 +1,14 @@
 import React, { Component } from "react";
 import BarsTabBar3Items2 from "../symbols/BarsTabBar3Items2";
 import { Svg, Path } from "react-native-svg";
-import Checkbox2 from "../symbols/checkbox2";
+
 import { Center } from "@builderx/utils";
 
 import Button6 from "../symbols/button6";
-
+import Checkbox2 from "../symbols/checkbox2";
 import { View, Text, StyleSheet } from "react-native";
 
-export default class ListContents extends Component {
+export default class Untitled extends Component {
   render() {
     return (
       <View style={styles.root}>
@@ -38,24 +38,19 @@ export default class ListContents extends Component {
             <Text style={styles.apples}>Apples</Text>
           </View>
         </View>
-        <View style={styles.secondItem}>
-          <View style={styles.group1}>
-            <Svg
-              viewBox="0 0 416.00 4.00"
-              preserveAspectRatio="none"
-              style={styles.line4}
-            >
-              <Path
-                strokeWidth={1}
-                fill="rgba(0,0,0,1)"
-                stroke="rgba(255,255,255,1)"
-                isClosed={false}
-                d="M1.00 1.50 L414.00 1.50 "
-              />
-            </Svg>
-            <Text style={styles.yogurt}>Cream cheese</Text>
+        <Center horizontal>
+          <View style={styles.secondItem}>
+            <View style={styles.group1}>
+              <Text style={styles.yogurt}>Cream cheese</Text>
+            </View>
           </View>
-        </View>
+        </Center>
+        <Button6
+          style={styles.rect6}
+          onPress={() => {
+            this.props.navigation.push("ListsScreen");
+          }}
+        />
         <View style={styles.rect8}>
           <View style={styles.rect9}>
             <Text style={styles.svg}>Bagels</Text>
@@ -63,34 +58,14 @@ export default class ListContents extends Component {
         </View>
         <View style={styles.text4}>
           <View style={styles.Ge2xYl}>
-            <Svg
-              style={styles.ribdUl}
-              viewBox="0 0 416.00 4.00"
-              preserveAspectRatio="none"
-            >
-              <Path
-                strokeWidth={1}
-                fill="rgba(0,0,0,1)"
-                stroke="rgba(255,255,255,1)"
-                isClosed={false}
-                d="M1.00 1.50 C414.00 1.50 414.00 1.50 414.00 1.50 "
-              />
-            </Svg>
             <Text style={styles.ukv2ns}>Yogurt</Text>
           </View>
         </View>
-        <Text style={styles.FmAECu}>Walmart</Text>
-        <Text style={styles.text5}>Publix </Text>
         <Checkbox2 style={styles.checkbox2} />
         <Checkbox2 style={styles.checkbox22} />
         <Checkbox2 style={styles.checkbox23} />
         <Checkbox2 style={styles.checkbox24} />
-        <Button6
-          style={styles.button6}
-          onPress={() => {
-            this.props.navigation.push("StartShoppingScreen");
-          }}
-        />
+        <Checkbox2 style={styles.checkbox25} />
       </View>
     );
   }
@@ -173,9 +148,9 @@ const styles = StyleSheet.create({
   },
   firstItem: {
     position: "absolute",
-    top: "19.36%",
-    left: "-0.83%",
-    height: "7.2%",
+    top: "13.3%",
+    left: "-2.78%",
+    height: "7.36%",
     width: "100%"
   },
   group: {
@@ -201,10 +176,10 @@ const styles = StyleSheet.create({
 
   secondItem: {
     position: "absolute",
-    top: "53.16%",
-    left: "-1.67%",
+
     height: 44,
-    width: 366
+    width: 366,
+    top: "35.37%"
   },
   group1: {
     position: "absolute",
@@ -213,15 +188,7 @@ const styles = StyleSheet.create({
     height: "100.00%",
     width: "100.00%"
   },
-  line4: {
-    position: "absolute",
-    height: "5.88%",
-    width: "100.24%",
-    top: "95.10%",
-    left: "-0.12%",
-    backgroundColor: "transparent",
-    borderColor: "transparent"
-  },
+
   yogurt: {
     position: "absolute",
     top: "0.00%",
@@ -235,12 +202,19 @@ const styles = StyleSheet.create({
     letterSpacing: 1.42
   },
 
+  rect6: {
+    left: "64.73%",
+    position: "absolute",
+    height: 46,
+    width: 115.98,
+    top: "91.39%"
+  },
   rect8: {
-    top: "46.12%",
-    left: "-0.56%",
+    left: "-0.28%",
     width: "100.28%",
-    height: "7.36%",
-    position: "absolute"
+    height: 47,
+    position: "absolute",
+    top: "28.01%"
   },
   rect9: {
     top: "0.00%",
@@ -262,8 +236,8 @@ const styles = StyleSheet.create({
     color: "rgba(106,106,106,1)"
   },
   text4: {
-    top: 164.71,
-    left: "-0.56%",
+    top: 132,
+    left: "-0.83%",
     width: "100.28%",
     height: "7.36%",
     position: "absolute"
@@ -275,15 +249,7 @@ const styles = StyleSheet.create({
     height: "100.00%",
     position: "absolute"
   },
-  ribdUl: {
-    top: "95.10%",
-    left: "-0.12%",
-    width: "100.24%",
-    height: "5.88%",
-    position: "absolute",
-    backgroundColor: "transparent",
-    borderColor: "transparent"
-  },
+
   ukv2ns: {
     top: "0.00%",
     left: "16.67%",
@@ -296,49 +262,29 @@ const styles = StyleSheet.create({
     letterSpacing: 1.42,
     color: "rgba(106,106,106,1)"
   },
-  FmAECu: {
-    top: 73.71,
-    left: "2.78%",
-    position: "absolute",
-    backgroundColor: "transparent",
-    fontSize: 30,
-    fontFamily: "Futura-Medium",
-    color: "rgba(244,211,94,1)"
-  },
-  text5: {
-    top: 243.71,
-    left: "2.78%",
-    position: "absolute",
-    backgroundColor: "transparent",
-    fontSize: 30,
-    fontFamily: "Futura-Medium",
-    color: "rgba(244,211,94,1)"
-  },
   checkbox2: {
-    top: 124,
+    top: 85,
     left: 11,
     position: "absolute"
   },
   checkbox22: {
-    top: 170,
+    top: 132,
     left: 11,
     position: "absolute"
   },
   checkbox23: {
+    top: 85,
     left: 11,
-    position: "absolute",
-    top: "46.01%"
+    position: "absolute"
   },
   checkbox24: {
+    top: 179,
     left: 11,
-    position: "absolute",
-    top: "53.36%"
+    position: "absolute"
   },
-  button6: {
-    top: "91.39%",
-    left: "64.73%",
-    width: 115.98,
-    height: 46,
+  checkbox25: {
+    top: 226,
+    left: 11,
     position: "absolute"
   }
 });

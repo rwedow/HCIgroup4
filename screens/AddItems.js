@@ -44,7 +44,7 @@ export default class AddItems extends Component {
         <SearchBar3 style={styles.searchBar32} />
         <Button122 style={styles.button1222} 
         onPress={() =>{
-          this.props.navigation.push("ListsScreen");
+          this.props.navigation.push("IndividualList2");
         }}/>
       </View>
     );

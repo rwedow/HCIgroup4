@@ -10,9 +10,10 @@ export default class button6 extends Component {
     defaultWidth: "auto"
   };
   render() {
+    const { onPress} = this.props;
     return (
-      <TouchableOpacity style={[styles.root, this.props.style]}>
-        <Text style={styles.buttonContent}>COUPONS</Text>
+      <TouchableOpacity style={[styles.root, this.props.style]} onPress={() => onPress()}>
+        <Text style={styles.buttonContent}>DONE</Text>
       </TouchableOpacity>
     );
   }
