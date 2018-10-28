@@ -8,7 +8,9 @@ export default class OverridesTabBarIconsActive1 extends Component {
     height: 34
   };
   render() {
-    return <View style={[styles.root, this.props.style]} />;
+    const { onPress} = this.props;
+    return <View style={[styles.root, this.props.style]} 
+    onPress={() => onPress()}/>;
   }
 }
 const styles = StyleSheet.create({

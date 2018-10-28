@@ -2,21 +2,10 @@ import React, { Component } from "react";
 import { Svg, Path } from "react-native-svg";
 import { Center } from "@builderx/utils";
 import SearchBar3 from "../symbols/searchBar3";
-import Button122 from "../symbols/button122";
-import { View, Text, StyleSheet, FlatList, TouchableHighlight, TouchableOpacity } from "react-native";
+import Button121 from "../symbols/button121";
+import { View, Text, StyleSheet } from "react-native";
 
-export default class AddItems extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      color: 'black'
-    };
-  }
-  onItemPress = () => {
-    this.setState({
-      color: "#ffffff"
-  })
-  }
+export default class AddItemsShopping extends Component {
   render() {
     return (
       <View style={styles.root}>
@@ -34,18 +23,45 @@ export default class AddItems extends Component {
           />
         </Svg>
         <View style={styles.group}>
-          
+          <Svg
+            viewBox="0 0 423.00 4.00"
+            preserveAspectRatio="none"
+            style={styles.line2}
+          >
+            <Path
+              strokeWidth={1}
+              fill="rgba(0,0,0,1)"
+              stroke="rgba(255,255,255,1)"
+              isClosed={false}
+              d="M1.01 1.50 L420.99 1.50 "
+            />
+          </Svg>
           <Text style={styles.anniesTomatoSoup}>Annie’s Tomato Soup</Text>
         </View>
-        <TouchableOpacity style={styles.group1} onPress={() => this.onItemPress()}>
+        <View style={styles.group1}>
+          <Svg
+            viewBox="0 0 423.00 4.00"
+            preserveAspectRatio="none"
+            style={styles.line4}
+          >
+            <Path
+              strokeWidth={1}
+              fill="rgba(0,0,0,1)"
+              stroke="rgba(255,255,255,1)"
+              isClosed={false}
+              d="M1.01 1.50 L420.99 1.50 "
+            />
+          </Svg>
           <Text style={styles.anniesTomatoBisqu}>Annie’s Tomato Bisque</Text>
-        </TouchableOpacity>
+        </View>
         <Text style={styles.text3}>Add Items</Text>
         <SearchBar3 style={styles.searchBar32} />
-        <Button122 style={styles.button1222} 
-        onPress={() =>{
-          this.props.navigation.push("IndividualList2");
-        }}/>
+        <Button121
+          style={styles.button121}
+          onPress={() => {
+            this.props.navigation.push("IndividualListScreen");
+          }}
+        />
       </View>
     );
   }
@@ -55,7 +71,6 @@ const styles = StyleSheet.create({
     backgroundColor: "rgba(250,240,202,1)",
     flex: 1
   },
-
 
   oval: {
     position: "absolute",
@@ -157,38 +172,7 @@ const styles = StyleSheet.create({
     color: "rgba(249,87,56,1)",
     left: "20.22%"
   },
-  eDJKwA: {
-    backgroundColor: "#ffffff",
-    padding: 15,
-    paddingTop: 10,
-    paddingBottom: 10
-  },
-  Niojkc: {
-    color: "#000000"
-  },
-  DZ8Qej: {
-    padding: 15,
-    backgroundColor: "#ffffff"
-  },
-  xg0jAy: {
-    color: "#999999",
-    fontSize: 13
-  },
-  OZvBTo: {
-    padding: 15,
-    backgroundColor: "#ffffff",
-    borderBottomWidth: 1,
-    borderBottomColor: "#999999"
-  },
-  w4Cq1N: {
-    color: "#999999",
-    fontSize: 14
-  },
-  l3qIpH: {
-    backgroundColor: "#999999",
-    left: 15,
-    height: 2
-  },
+
   searchBar32: {
     left: 6,
     position: "absolute",
@@ -196,10 +180,10 @@ const styles = StyleSheet.create({
     width: 343,
     top: "11.74%"
   },
-  button1222: {
+  button121: {
     top: 589,
-    left: 236,
-    position: "absolute",
-    height: 36
+    left: 253,
+    height: 36,
+    position: "absolute"
   }
 });

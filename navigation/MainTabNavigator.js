@@ -11,6 +11,9 @@ import NameList from '../screens/NameList';
 import AddItems from '../screens/AddItems';
 import PreferencesForm from '../screens/PreferencesForm';
 import StartShoppingScreen from '../screens/StartShoppingScreen';
+import IndividualListScreen from '../screens/IndividualListScreen';
+import IndividualList2 from '../screens/IndividualList2';
+import AddItemsShopping from '../screens/AddItemsShopping';
 
 // static navigationOptions = {
 //   title: 'Home',
@@ -39,9 +42,15 @@ export const HomeStack = createStackNavigator({
     PreferencesForm: {
       screen: PreferencesForm,
     },
-    AddItems: {
-      screen: AddItems,
+    AddItemsShopping: {
+      screen: AddItemsShopping,
     },
+    IndividualListScreen: {
+      screen: IndividualListScreen,
+    },
+    Home: {
+      screen: StartShoppingScreen,
+      },
 });
 
 HomeStack.navigationOptions = {
@@ -67,6 +76,12 @@ const ListsStack = createStackNavigator({
   },
   AddItems: {
     screen: AddItems,
+  },
+  IndividualList2: {
+    screen: IndividualList2,
+  },
+  List: {
+    screen: ListsScreen,
   },
 });
 
