@@ -38,7 +38,10 @@ export default class ListsScreen extends React.Component {
           activeTabIndex={0}
         >
           <TabContent title="Lists">
-            <View style={styles.navItem} />
+            <View style={styles.navItem} 
+            onPress={() => {
+            this.props.navigation.push("IndividualListScreen");
+          }}/>
           </TabContent>
           <TabContent title="Recipes">
             <View style={styles.navItem} />
