@@ -14,7 +14,7 @@ export default class BrowseScreen extends Component {
       input: '',
       dataSource: ds
     }
-    this.resultsArray = ['Tomato Soup', 'Salsa', 'Potatoes', 'Cheese', 'Eggs', 'Apples', 'Frozen Peas', 'Carrots', 'Lemons', 'Barbeque Sauce', 'Limes', 'Blueberries', 'Sweet Potatoes', 'Cherries', 'Tortillas'];
+    this.resultsArray = ['Tomato Soup', 'Salsa', 'French Fries', 'Omlet', 'Scrambled Eggs', 'Applesauce', 'Lentil Dal', 'Carrot Cake', 'Lemon Bars', 'Barbeque Jackfruit', 'Ginger Tea', 'Blueberry Pie', 'Sweet Potato Cassarole', 'Cherry Muffins', 'Tacos'];
   }
 
   searchFilter(text){
@@ -138,31 +138,15 @@ const styles = StyleSheet.create({
     flex: 1,
     backgroundColor: "#eeeeee"
   },
-  resultsGroup: {
-    flex: 1,
-    justifyContent: 'space-between'
-  },
   resultItem: {
     top: "21.52%",
     left: "0.00%",
     height: "8.93%",
     width: "101.69%",
   },
-  line: {
-    position: "absolute",
-    height: "5.88%",
-    width: "100.24%",
-    top: "95.10%",
-    left: "-0.12%",
-    backgroundColor: "transparent", 
-    borderColor: "transparent"
-  },
   resultText: {
-    // top: "0.00%",
     left: "4.28%",
-    // height: "78.43%",
     width: "90.26%",
-    // padding: 10,
     backgroundColor: "transparent",
     color: "rgba(106,106,106,1)",
     fontSize: 28,
@@ -176,15 +160,6 @@ const styles = StyleSheet.create({
     height: "15.08%",
     width: "101.69%"
   },
-  line4: {
-    position: "absolute",
-    height: "2.70%",
-    width: "100.24%",
-    top: "43.69%",
-    left: "-0.12%",
-    backgroundColor: "transparent",
-    borderColor: "transparent"
-  }
 });
 
 
