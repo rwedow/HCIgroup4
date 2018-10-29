@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import { TabView, TabContent } from "@builderx/tab-view";
 import { Svg, Path } from "react-native-svg";
-import { View, Text, StyleSheet, TextInput, ListView, AsyncStorage, ScrollView } from "react-native";
+import { View, Text, StyleSheet, TextInput, ListView} from "react-native";
 
 var ds = new ListView.DataSource({rowHasChanged: (r1, r2) => r1 !== r2});
 
@@ -21,8 +21,6 @@ export default class BrowseScreen extends Component {
     const newData = this.resultsArray.filter(function(item){
       const itemData = item.toUpperCase()
       const textData = text.toUpperCase()
-      console.log(itemData);
-      console.log(itemData.indexOf(textData))
       return itemData.indexOf(textData) > -1
     })
     this.setState({
@@ -79,7 +77,7 @@ export default class BrowseScreen extends Component {
           dataSource={this.state.dataSource}
           renderSeparator={this.LVlines}
           renderRow={(rowData) => <Text style={styles.resultText}>{ rowData }</Text>}
-          onPress={this.selectItem.bind(this, rowData)}
+          // onPress={this.selectItem.bind(this, rowData)}
           style={styles.resultItem}
           enableEmptySections={true}
         />
