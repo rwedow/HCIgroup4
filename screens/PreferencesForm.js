@@ -2,10 +2,16 @@ import React, { Component } from "react";
 import { Center } from "@builderx/utils";
 import Button121 from "../symbols/button121";
 import Checkbox1 from "../symbols/checkbox1";
+import '@expo/vector-icons';
+import { Constants } from 'expo';
+import { CheckBox } from 'react-native-elements';
 
 import { View, StyleSheet, TextInput, Text } from "react-native";
 
 export default class PreferencesForm extends Component {
+  state = {
+    checked: false,
+  };
   render() {
     return (
       <View style={styles.root}>
@@ -38,7 +44,16 @@ export default class PreferencesForm extends Component {
           }}
         />
         <Text style={styles.text6}>Allow substitutions</Text>
-        <Checkbox1 style={styles.checkbox1} />
+        
+        <View style={styles.checkbox1}>
+          <CheckBox 
+            checked containerStyle= {{margin: 0, padding: 0, 
+              backgroundColor: "rgba(250,240,202,1)", borderColor: "rgba(250,240,202,1)"}}
+           // style={{backgroundColor: "rgba(250,240,202,1)", color: "#EE964B"}}
+            checked={this.state.checked}
+            onPress={() => this.setState({ checked: !this.state.checked })}
+          />
+        </View>
       </View>
     );
   }
@@ -129,8 +144,15 @@ const styles = StyleSheet.create({
     left: "22.78%"
   },
   checkbox1: {
-    top: 423,
-    left: 52,
-    position: "absolute"
-  }
+    flex: 1,
+    top: 430,
+    left: 30,
+    position: "absolute",
+    //backgroundColor: "rgba(250,240,202,1)",
+   // width: 60,
+    margin: 0,
+    padding: 0
+  },
+  
+  
 });

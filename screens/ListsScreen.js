@@ -2,6 +2,9 @@ import React, { Component } from "react";
 import { TabView, TabContent } from "@builderx/tab-view";
 import { Svg, Path } from "react-native-svg";
 import Button10 from "../symbols/button10";
+import { Center } from "@builderx/utils";
+import Button124 from "../symbols/button124";
+import Button15 from "../symbols/button15";
 import { View, StyleSheet, Text, Button, TouchableOpacity} from "react-native";
 
 export default class ListsScreen extends React.Component {
@@ -40,7 +43,7 @@ export default class ListsScreen extends React.Component {
           <TabContent title="Lists">
             <View style={styles.navItem} 
             onPress={() => {
-            this.props.navigation.push("IndividualListScreen");
+            activeTabIndex=1;
           }}/>
           </TabContent>
           <TabContent title="Recipes">
@@ -48,12 +51,14 @@ export default class ListsScreen extends React.Component {
           </TabContent>
         </TabView>
 
-        <Button10
-          style={styles.button10}
-          onPress={() => {
-          this.props.navigation.push("NameList");
-          }}
-        />
+        <Center horizontal>
+          <Button10
+            style={styles.button10}
+            onPress={() => {
+              this.props.navigation.push("NameList");
+            }}
+          />
+        </Center>
         
         { listsArr }
       </View>
@@ -127,10 +132,24 @@ const styles = StyleSheet.create({
     color: "rgba(106,106,106,1)"
   },
   button10: {
-    top: 156,
-    left: 102,
+    top: 155,
+
     position: "absolute",
     height: 53
+  },
+  button124: {
+    top: 0,
+    left: 0,
+    position: "absolute",
+    height: 49,
+    width: 180
+  },
+  button15: {
+    top: 0,
+    position: "absolute",
+    height: 49,
+    width: 177.5,
+    right: 0
   }
 });
 
