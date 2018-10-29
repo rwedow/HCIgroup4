@@ -48,7 +48,9 @@ export default class Untitled extends Component {
         <Button6
           style={styles.rect6}
           onPress={() => {
-            this.props.navigation.push("ListsScreen");
+            this.props.navigation.pop();
+            this.props.navigation.pop();
+            this.props.navigation.pop();
           }}
         />
         <View style={styles.rect8}>

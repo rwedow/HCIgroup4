@@ -2,13 +2,18 @@ import React, { Component } from "react";
 import BarsTabBar3Items2 from "../symbols/BarsTabBar3Items2";
 import { Svg, Path } from "react-native-svg";
 import Checkbox2 from "../symbols/checkbox2";
+
 import { Center } from "@builderx/utils";
 
 import Button6 from "../symbols/button6";
 
-import { View, Text, StyleSheet } from "react-native";
+import { View, Text, StyleSheet, CheckBox } from "react-native";
 
 export default class ListContents extends Component {
+  state = {
+    checked: false,
+  };
+
   render() {
     return (
       <View style={styles.root}>
@@ -81,6 +86,13 @@ export default class ListContents extends Component {
         </View>
         <Text style={styles.FmAECu}>Walmart</Text>
         <Text style={styles.text5}>Publix </Text>
+      {/* <View style={styles.checkbox2}>
+          <CheckBox
+            title="Press me"
+            checked={this.state.checked}
+            onPress={() => this.setState({ checked: !this.state.checked })}
+          />
+        </View> */}
         <Checkbox2 style={styles.checkbox2} />
         <Checkbox2 style={styles.checkbox22} />
         <Checkbox2 style={styles.checkbox23} />
@@ -88,7 +100,9 @@ export default class ListContents extends Component {
         <Button6
           style={styles.button6}
           onPress={() => {
-            this.props.navigation.push("StartShoppingScreen");
+            this.props.navigation.pop();
+            this.props.navigation.pop();
+            this.props.navigation.pop();
           }}
         />
       </View>

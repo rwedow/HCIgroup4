@@ -14,6 +14,8 @@ import StartShoppingScreen from '../screens/StartShoppingScreen';
 import IndividualListScreen from '../screens/IndividualListScreen';
 import IndividualList2 from '../screens/IndividualList2';
 import AddItemsShopping from '../screens/AddItemsShopping';
+import RecipesTab from '../screens/RecipesTab';
+import Test from '../screens/Test';
 
 // static navigationOptions = {
 //   title: 'Home',
@@ -30,7 +32,7 @@ import AddItemsShopping from '../screens/AddItemsShopping';
 
 export const HomeStack = createStackNavigator({
   Home: {
-    screen: StartShoppingScreen,
+    screen: HomeScreen,
       navigationOptions: {
         headerBackTitleStyle: '#000',
         title: "Home",
@@ -60,8 +62,8 @@ HomeStack.navigationOptions = {
       focused={focused}
       name={
         Platform.OS === 'ios'
-          ? `ios-information-circle${focused ? '' : '-outline'}`
-          : 'md-information-circle'
+          ? `ios-home${focused ? '' : '-outline'}`
+          : 'home-icon'
       }
     />
   ),
@@ -70,6 +72,9 @@ HomeStack.navigationOptions = {
 const ListsStack = createStackNavigator({
   List: {
     screen: ListsScreen,
+  },
+  RecipesTab: {
+    screen: RecipesTab,
   },
   NameList: {
     screen: NameList,
@@ -80,9 +85,7 @@ const ListsStack = createStackNavigator({
   IndividualList2: {
     screen: IndividualList2,
   },
-  List: {
-    screen: ListsScreen,
-  },
+  
 });
 
 ListsStack.navigationOptions = {
@@ -90,7 +93,7 @@ ListsStack.navigationOptions = {
   tabBarIcon: ({ focused }) => (
     <TabBarIcon
       focused={focused}
-      name={Platform.OS === 'ios' ? `ios-link${focused ? '' : '-outline'}` : 'md-link'}
+      name={Platform.OS === 'ios' ? `ios-list${focused ? '' : '-outline'}` : 'md-link'}
     />
   ),
 };
@@ -104,7 +107,7 @@ BrowseStack.navigationOptions = {
   tabBarIcon: ({ focused }) => (
     <TabBarIcon
       focused={focused}
-      name={Platform.OS === 'ios' ? `ios-options${focused ? '' : '-outline'}` : 'md-options'}
+      name={Platform.OS === 'ios' ? `ios-search${focused ? '' : '-outline'}` : 'md-options'}
     />
   ),
 };
