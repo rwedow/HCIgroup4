@@ -100,50 +100,6 @@ const styles = StyleSheet.create({
     backgroundColor: "rgba(238,150,75,1)",
     opacity: 1
   },
-//   rect: {
-//     flex: 1,
-//     backgroundColor: "#eeeeee"
-//   },
-//   rect2: {
-//     flex: 1,
-//     backgroundColor: "#eeeeee"
-//   },
-//   rect3: {
-//     top: "8.55%",
-//     left: "0%",
-//     width: "101.6%",
-//     height: "6.9%",
-//     position: "absolute"
-//   },
-//   svg: {
-//     top: "95.10%",
-//     left: "-0.12%",
-//     width: "100.24%",
-//     height: "5.88%",
-//     position: "absolute",
-//     backgroundColor: "transparent",
-//     borderColor: "transparent"
-//   },
-//   text: {
-//     top: "0.00%",
-//     left: "4.28%",
-//     width: "90.26%",
-//     height: "78.43%",
-//     position: "absolute",
-//     backgroundColor: "transparent",
-//     fontSize: 28,
-//     fontFamily: "Futura-Medium",
-//     letterSpacing: 1.42,
-//     color: "rgba(106,106,106,1)"
-//   },
-//   rect4: {
-//     top: "16.34%",
-//     left: "0%",
-//     width: "101.6%",
-//     height: "6.9%",
-//     position: "absolute"
-//   },
-//   svg2: {
   navItem: {
     flex: 1,
     backgroundColor: "#eeeeee"

@@ -72,9 +72,9 @@ const styles = StyleSheet.create({
     color: "rgba(106,106,106,1)"
   },
   textInput2: {
-    top: "54.93%",
-    width: 132,
-    height: 34,
+    top: "20.93%",
+    // width: 132,
+    // height: 34,
     position: "absolute",
     fontSize: 20,
     color: "rgba(238,150,75,1)"
@@ -101,7 +101,7 @@ const styles = StyleSheet.create({
     opacity: 1
   },
   text4: {
-    top: 181,
+    top: 155,
     position: "absolute",
     backgroundColor: "transparent",
     left: "27.78%",
