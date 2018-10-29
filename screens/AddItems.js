@@ -1,6 +1,5 @@
 import React, { Component } from "react";
 import { Svg, Path } from "react-native-svg";
-import { Center } from "@builderx/utils";
 import Button122 from "../symbols/button122";
 import { View, Text, StyleSheet, TextInput, FlatList, TouchableHighlight, TouchableOpacity, ListView } from "react-native";
 

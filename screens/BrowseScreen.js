@@ -14,7 +14,7 @@ export default class BrowseScreen extends Component {
       input: '',
       dataSource: ds
     }
-    this.resultsArray = ['Tomato Soup', 'Salsa', 'Potatoes', 'Cheese', 'Eggs', 'Apples', 'Frozen Peas', 'Carrots', 'Lemons', 'Barbeque Sauce', 'Limes', 'Blueberries', 'Sweet Potatoes', 'Cherries', 'Tortillas'];
+    this.resultsArray = ['Tomato Soup', 'Salsa', 'French Fries', 'Omlet', 'Scrambled Eggs', 'Applesauce', 'Lentil Dal', 'Carrot Cake', 'Lemon Bars', 'Barbeque Jackfruit', 'Ginger Tea', 'Blueberry Pie', 'Sweet Potato Cassarole', 'Cherry Muffins', 'Tacos'];
   }
 
   searchFilter(text){

@@ -8,7 +8,7 @@ export default class IPhone818 extends Component {
     return (
       <View style={styles.root}>
         <View style={styles.startButton}>
-          <Svg
+        <Svg
             viewBox="0 0 345.00 345.00"
             preserveAspectRatio="none"
             style={styles.oval}
