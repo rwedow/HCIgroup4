@@ -15,7 +15,7 @@ export default class StartShopping extends Component {
     return (
       <View style={styles.root}>
         <TouchableOpacity
-          style={styles.startButton}
+          style={styles.button}
           onPress={() => {
             this.props.navigation.push("PreferencesForm");
           }}
@@ -57,12 +57,12 @@ const styles = StyleSheet.create({
     backgroundColor: "rgba(250,240,202,1)",
     flex: 1
   },
-  startButton: {
+  button: {
     position: "absolute",
     top: "26.63%",
-    left: "11.45%",
-    height: "50.88%",
-    width: "78.33%"
+    left: "8.45%",
+    height: "46.88%",
+    width: "83.33%"
   },
   oval: {
     position: "absolute",
