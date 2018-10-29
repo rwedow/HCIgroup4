@@ -1,43 +1,61 @@
 import React, { Component } from "react";
 import { TabView, TabContent } from "@builderx/tab-view";
-import SearchBar from 'react-native-searchbar';
 import { Svg, Path } from "react-native-svg";
-import { View, Text, StyleSheet, TextInput } from "react-native";
+import { View, Text, StyleSheet, TextInput, ListView, AsyncStorage, ScrollView } from "react-native";
+
+var ds = new ListView.DataSource({rowHasChanged: (r1, r2) => r1 !== r2});
 
 export default class BrowseScreen extends Component {
-  render() {
 
-    const searchEntry = [''];
+  constructor(props) {
+    super(props);
+    this.state = {
+      isLoading: true,
+      input: '',
+      dataSource: ds
+    }
+    this.resultsArray = ['Tomato Soup', 'Salsa', 'Potatoes', 'Cheese', 'Eggs', 'Apples', 'Frozen Peas', 'Carrots', 'Lemons', 'Barbeque Sauce', 'Limes', 'Blueberries', 'Sweet Potatoes', 'Cherries', 'Tortillas'];
+  }
 
-    var searchResults = ['Tomato Soup', 'Tomato Salsa'];
-    var resultsArr = searchResults.map(function(item, index){
-      return <View style={styles.resultItem} key={index}>
-      <Svg
-        viewBox="0 0 423.00 4.00"
-        preserveAspectRatio="none"
-        style={styles.line}
-      >
-        <Path
-          strokeWidth={1}
-          fill="rgba(0,0,0,1)"
-          stroke="rgba(255,255,255,1)"
-          isClosed={false}
-          d="M1.01 1.50 L420.99 1.50 "
-        />
-      </Svg>
-      <Text style={styles.resultText}>{ item }</Text>
-    </View>;
+  searchFilter(text){
+    const newData = this.resultsArray.filter(function(item){
+      const itemData = item.toUpperCase()
+      const textData = text.toUpperCase()
+      console.log(itemData);
+      console.log(itemData.indexOf(textData))
+      return itemData.indexOf(textData) > -1
     })
+    this.setState({
+      dataSource: this.state.dataSource.cloneWithRows(newData),
+      text: text
+    })
+  }
 
+  selectItem(item){
+    //do something later
+  }
+
+  LVlines = () => {
+    return(
+      <View
+        style={{
+          height: .5,
+          width: "100%",
+          backgroundColor: "#FFF",
+        }}
+      />
+    );
+  }
+
+  render() {
     return (
       <View style={styles.root}>
 
         <TextInput
           style={styles.textInput}
-          ref={(ref) => this.searchBar = ref}
-          data={searchEntry}
-          placeholder={"Search"}
-          handleResults={this._handleResults}
+          value={this.state.input}
+          onChangeText={(text) => this.searchFilter(text)}
+          placeholder="Search"
           showOnLoad
         />
 
@@ -57,7 +75,14 @@ export default class BrowseScreen extends Component {
           </TabContent>
         </TabView>
 
-        { resultsArr }
+        <ListView
+          dataSource={this.state.dataSource}
+          renderSeparator={this.LVlines}
+          renderRow={(rowData) => <Text style={styles.resultText}>{ rowData }</Text>}
+          onPress={this.selectItem.bind(this, rowData)}
+          style={styles.resultItem}
+          enableEmptySections={true}
+        />
       </View>
     );
   }
@@ -115,11 +140,15 @@ const styles = StyleSheet.create({
     flex: 1,
     backgroundColor: "#eeeeee"
   },
+  resultsGroup: {
+    flex: 1,
+    justifyContent: 'space-between'
+  },
   resultItem: {
     top: "21.52%",
     left: "0.00%",
     height: "8.93%",
-    width: "101.69%"
+    width: "101.69%",
   },
   line: {
     position: "absolute",
@@ -131,11 +160,11 @@ const styles = StyleSheet.create({
     borderColor: "transparent"
   },
   resultText: {
-    position: "absolute",
-    top: "0.00%",
+    // top: "0.00%",
     left: "4.28%",
-    height: "78.43%",
+    // height: "78.43%",
     width: "90.26%",
+    // padding: 10,
     backgroundColor: "transparent",
     color: "rgba(106,106,106,1)",
     fontSize: 28,

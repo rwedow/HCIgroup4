@@ -51,7 +51,7 @@ const styles = StyleSheet.create({
     top: "26.63%",
     left: "11.45%",
     height: "50.88%",
-    width: "78.33%"
+    width: "50.88%"
   },
   oval: {
     position: "absolute",
