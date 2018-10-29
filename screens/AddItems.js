@@ -1,51 +1,80 @@
 import React, { Component } from "react";
 import { Svg, Path } from "react-native-svg";
 import { Center } from "@builderx/utils";
-import SearchBar3 from "../symbols/searchBar3";
 import Button122 from "../symbols/button122";
-import { View, Text, StyleSheet, FlatList, TouchableHighlight, TouchableOpacity } from "react-native";
+import { View, Text, StyleSheet, TextInput, FlatList, TouchableHighlight, TouchableOpacity, ListView } from "react-native";
+
+var ds = new ListView.DataSource({rowHasChanged: (r1, r2) => r1 !== r2});
 
 export default class AddItems extends Component {
   constructor(props) {
     super(props);
     this.state = {
+      isLoading: true,
+      input: '',
+      dataSource: ds,
       color: 'black'
-    };
+    }
+    this.resultsArray = ['Tomato Soup', 'Salsa', 'Potatoes', 'Cheese', 'Eggs', 'Apples', 'Frozen Peas', 'Carrots', 'Lemons', 'Barbeque Sauce', 'Limes', 'Blueberries', 'Sweet Potatoes', 'Cherries', 'Tortillas'];
   }
-  onItemPress = () => {
+
+  searchFilter(text){
+    const newData = this.resultsArray.filter(function(item){
+      const itemData = item.toUpperCase()
+      const textData = text.toUpperCase()
+      return itemData.indexOf(textData) > -1
+    })
     this.setState({
-      color: "#ffffff"
-  })
+      dataSource: this.state.dataSource.cloneWithRows(newData),
+      text: text
+    })
   }
+
+  selectItem(item){
+    //do something later
+  }
+
+  LVlines = () => {
+    return(
+      <View
+        style={{
+          height: .5,
+          width: "100%",
+          backgroundColor: "#FFF",
+        }}
+      />
+    );
+  }
+
   render() {
     return (
       <View style={styles.root}>
-        <Svg
-          viewBox="0 0 423.00 4.00"
-          preserveAspectRatio="none"
-          style={styles.line}
-        >
-          <Path
-            strokeWidth={1}
-            fill="rgba(0,0,0,1)"
-            stroke="rgba(255,255,255,1)"
-            isClosed={false}
-            d="M1.01 1.50 L420.99 1.50 "
-          />
-        </Svg>
-        <View style={styles.group}>
-          
-          <Text style={styles.anniesTomatoSoup}>Annie’s Tomato Soup</Text>
-        </View>
-        <TouchableOpacity style={styles.group1} onPress={() => this.onItemPress()}>
+        <Text style={styles.headerText}>Add Items</Text>
+        <TextInput
+          style={styles.textInput}
+          value={this.state.input}
+          onChangeText={(text) => this.searchFilter(text)}
+          placeholder="Search"
+          showOnLoad
+        />
+        
+        <ListView
+          dataSource={this.state.dataSource}
+          renderSeparator={this.LVlines}
+          renderRow={(rowData) => <Text style={styles.resultText}>{ rowData }</Text>}
+          // onPress={this.selectItem.bind(this, rowData)}
+          style={styles.resultItem}
+          enableEmptySections={true}
+        />
+
+        {/* <TouchableOpacity style={styles.group1} onPress={() => this.onItemPress()}>
           <Text style={styles.anniesTomatoBisqu}>Annie’s Tomato Bisque</Text>
-        </TouchableOpacity>
-        <Text style={styles.text3}>Add Items</Text>
-        <SearchBar3 style={styles.searchBar32} />
+        </TouchableOpacity> */}
+
         <Button122 style={styles.button1222} 
-        onPress={() =>{
-          this.props.navigation.push("IndividualList2");
-        }}/>
+          onPress={() =>{
+            this.props.navigation.push("IndividualList2");
+          }}/>
       </View>
     );
   }
@@ -55,98 +84,7 @@ const styles = StyleSheet.create({
     backgroundColor: "rgba(250,240,202,1)",
     flex: 1
   },
-
-
-  oval: {
-    position: "absolute",
-    height: "100.00%",
-    width: "100.00%",
-    top: "0.00%",
-    left: "0.00%",
-    backgroundColor: "transparent",
-    borderColor: "transparent"
-  },
-  line3: {
-    position: "absolute",
-    height: "8.62%",
-    width: "77.59%",
-    top: "46.55%",
-    left: "8.62%",
-    backgroundColor: "transparent",
-    borderColor: "transparent",
-    transform: [
-      {
-        scaleX: -1
-      }
-    ]
-  },
-  line: {
-    position: "absolute",
-    height: "0.41%",
-    width: "101.93%",
-    top: "19.77%",
-    left: "-2.05%",
-    backgroundColor: "transparent",
-    borderColor: "transparent"
-  },
-  group: {
-    position: "absolute",
-    top: "21.06%",
-    left: 0,
-    height: "6.93%",
-    width: "101.66%"
-  },
-  line2: {
-    position: "absolute",
-    height: "5.88%",
-    width: "100.24%",
-    top: "95.10%",
-    left: "-0.12%",
-    backgroundColor: "transparent",
-    borderColor: "transparent"
-  },
-  anniesTomatoSoup: {
-    position: "absolute",
-    top: "0.00%",
-    left: "4.28%",
-    height: "78.43%",
-    width: "90.26%",
-    backgroundColor: "transparent",
-    color: "rgba(106,106,106,1)",
-    fontSize: 28,
-    fontFamily: "Futura-Medium",
-    letterSpacing: 1.42
-  },
-  group1: {
-    position: "absolute",
-    top: "29.08%",
-    left: 0,
-    height: "6.93%",
-    width: "101.66%"
-  },
-  line4: {
-    position: "absolute",
-    height: "5.88%",
-    width: "100.24%",
-    top: "95.10%",
-    left: "-0.12%",
-    backgroundColor: "transparent",
-    borderColor: "transparent"
-  },
-  anniesTomatoBisqu: {
-    position: "absolute",
-    top: "0.00%",
-    left: "4.28%",
-    height: "78.43%",
-    width: "90.26%",
-    backgroundColor: "transparent",
-    color: "rgba(106,106,106,1)",
-    fontSize: 28,
-    fontFamily: "Futura-Medium",
-    letterSpacing: 1.42
-  },
-
-  text3: {
+  headerText: {
     top: "2.5%",
     width: 236,
     height: "9.23%",
@@ -157,44 +95,45 @@ const styles = StyleSheet.create({
     color: "rgba(249,87,56,1)",
     left: "20.22%"
   },
-  eDJKwA: {
-    backgroundColor: "#ffffff",
-    padding: 15,
-    paddingTop: 10,
-    paddingBottom: 10
-  },
-  Niojkc: {
-    color: "#000000"
-  },
-  DZ8Qej: {
-    padding: 15,
-    backgroundColor: "#ffffff"
-  },
-  xg0jAy: {
-    color: "#999999",
-    fontSize: 13
-  },
-  OZvBTo: {
-    padding: 15,
-    backgroundColor: "#ffffff",
-    borderBottomWidth: 1,
-    borderBottomColor: "#999999"
-  },
-  w4Cq1N: {
-    color: "#999999",
-    fontSize: 14
-  },
-  l3qIpH: {
-    backgroundColor: "#999999",
-    left: 15,
-    height: 2
-  },
-  searchBar32: {
-    left: 6,
+  textInput: {
     position: "absolute",
-    height: 44,
-    width: 343,
-    top: "11.74%"
+    top: "11.74%",
+    fontSize: 22,
+    flex: .1,
+    backgroundColor: "#fff",
+    height: 50,
+    width: 355,
+    margin: 5,
+    marginLeft: 10,
+    borderRadius: 40,
+    fontSize: 22,
+    textAlign: "center"
+  },
+  resultText: {
+    left: "4.28%",
+    width: "90.26%",
+    backgroundColor: "transparent",
+    color: "rgba(106,106,106,1)",
+    fontSize: 28,
+    fontFamily: "Futura-Medium",
+    letterSpacing: 1.42
+  },
+  resultsGroup: {
+    flex: 1,
+    justifyContent: 'space-between'
+  },
+  resultItem: {
+    top: "21.52%",
+    left: "0.00%",
+    height: "8.93%",
+    width: "101.69%",
+  },
+  group: {
+    position: "absolute",
+    top: "21.06%",
+    left: 0,
+    height: "6.93%",
+    width: "101.66%"
   },
   button1222: {
     top: 589,

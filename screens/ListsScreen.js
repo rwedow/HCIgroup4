@@ -3,9 +3,7 @@ import { TabView, TabContent } from "@builderx/tab-view";
 import { Svg, Path } from "react-native-svg";
 import Button10 from "../symbols/button10";
 import { Center } from "@builderx/utils";
-import Button124 from "../symbols/button124";
-import Button15 from "../symbols/button15";
-import { View, StyleSheet, Text, Button, TouchableOpacity} from "react-native";
+import { View, StyleSheet, Text, TouchableOpacity} from "react-native";
 
 export default class ListsScreen extends React.Component {
   render() {
@@ -132,10 +130,10 @@ const styles = StyleSheet.create({
     color: "rgba(106,106,106,1)"
   },
   button10: {
-    top: 155,
-
+    top: 588.63,
+    left: 245.5,
     position: "absolute",
-    height: 53
+    height: 36,
   },
   button124: {
     top: 0,
@@ -152,32 +150,3 @@ const styles = StyleSheet.create({
     right: 0
   }
 });
-
-
-// import React from 'react';
-// import { ScrollView, StyleSheet } from 'react-native';
-// import { ExpoLinksView } from '@expo/samples';
-
-// export default class ListsScreen extends React.Component {
-//   static navigationOptions = {
-//     title: 'Lists',
-//   };
-
-//   render() {
-//     return (
-//       <ScrollView style={styles.container}>
-//         {/* Go ahead and delete ExpoLinksView and replace it with your
-//            * content, we just wanted to provide you with some helpful links */}
-//         <ExpoLinksView />
-//       </ScrollView>
-//     );
-//   }
-// }
-
-// const styles = StyleSheet.create({
-//   container: {
-//     flex: 1,
-//     paddingTop: 15,
-//     backgroundColor: '#FAF0CA',
-//   },
-// });
