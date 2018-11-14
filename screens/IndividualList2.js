@@ -2,16 +2,31 @@ import React, { Component } from "react";
 import { Svg, Path } from "react-native-svg";
 import Button6 from "../symbols/button6";
 import Checkbox2 from "../symbols/checkbox2";
+import CustomCheckbox from "../screens/CustomCheckbox"
 import { View, Text, StyleSheet, ScrollView } from "react-native";
+import { ListItem,  } from 'react-native-elements';
+//import ReactDOM from 'react-dom'
 
-export default class Untitled extends Component {
+
+
+export default class IndividualList2 extends Component {
+  state = {
+    checked: false,
+  }
+  press = () => {
+    this.setState((state) => ({
+      checked: !state.checked,
+    }));
+  }
   render() {
 
     var listItems = ['Tomato Soup', 'Salsa', 'Potatoes', 'Cheese', 'Eggs', 'Apples', 'Frozen Peas', 'Carrots', 'Lemons', 'Barbeque Sauce', 'Limes', 'Blueberries', 'Sweet Potatoes', 'Cherries', 'Tortillas'];
 
     var itemsArr = listItems.map(function(item, index){
       return <View style={styles.resultItem} key={index}>
-      <Checkbox2 style={styles.checkbox} />
+      <View style={styles.checkbox}>
+        <CustomCheckbox />
+      </View>
       <Svg
         style={styles.line}
         viewBox="0 0 423.00 4.00"
